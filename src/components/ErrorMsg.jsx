@@ -1,5 +1,7 @@
-import React from "react";
-
-export const ErrorMsg = () => {
-  return <div>ErrorMsg</div>;
+export const ErrorMsg = ({ message }) => {
+  return (
+    <div>
+      <span>{message}</span>
+    </div>
+  );
 };
