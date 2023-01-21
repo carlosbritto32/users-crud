@@ -1,5 +1,9 @@
-import React from "react";
+import { Header } from "../components/Header";
 
 export const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
