@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorMsg } from "../components/ErrorMsg";
+import "../style/LoginAndRegister.css";
 
 export function Login() {
   const [user, setUser] = useState({
@@ -33,10 +34,10 @@ export function Login() {
   };
 
   return (
-    <div>
+    <div className="form-container">
       {error && <ErrorMsg message={error} />}
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="group-container">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -47,7 +48,7 @@ export function Login() {
           />
         </div>
 
-        <div className="mb-5">
+        <div className="group-container">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -58,11 +59,13 @@ export function Login() {
           />
         </div>
 
-        <button>Log in</button>
+        <button className="button">Log in</button>
 
-        <p>
+        <p className="message-info">
           Don't have an Account?
-          <Link to="/register">Register !</Link>{" "}
+          <Link to="/register" className="link">
+            Register !
+          </Link>{" "}
         </p>
       </form>
     </div>
