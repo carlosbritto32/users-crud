@@ -1,0 +1,39 @@
+.header-container {
+  background-color: rgb(251 146 60);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 0 18px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+.header-container a:hover {
+  color: rgb(241 245 249);
+}
+
+.header-container nav {
+  color: white;
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+}
+
+nav button {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  color: rgb(30 41 59);
+}
+
+nav button:hover {
+  cursor: pointer;
+  background-color: rgb(241 245 249);
+}
