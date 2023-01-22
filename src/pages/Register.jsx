@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { ErrorMsg } from "../components/ErrorMsg";
+import "../style/LoginAndRegister.css";
 
 export function Register() {
   const [user, setUser] = useState({
@@ -32,11 +33,11 @@ export function Register() {
     }
   };
   return (
-    <div>
+    <div className="form-container">
       {error && <ErrorMsg message={error} />}
 
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="group-container">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -46,7 +47,7 @@ export function Register() {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="group-container">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -57,11 +58,13 @@ export function Register() {
           />
         </div>
 
-        <button>Register</button>
+        <button className="button">Register</button>
 
-        <p>
+        <p className="message-info">
           Already have an Account?
-          <Link to="/login">Login !</Link>{" "}
+          <Link to="/login" className="link">
+            Login !
+          </Link>{" "}
         </p>
       </form>
     </div>
