@@ -5,6 +5,7 @@ import { Register } from "./pages/Register";
 import { ProtectedRoutes } from "./components/ProtectedRoutes";
 import { AuthProvider } from "./context/authContext";
 import "./App.css";
+import { Layout } from "./components/Layout";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
             path="/"
             element={
               <ProtectedRoutes>
-                <Dashboard />
+                <Layout>
+                  <Dashboard />
+                </Layout>
               </ProtectedRoutes>
             }
           />
