@@ -6,6 +6,8 @@ import { ProtectedRoutes } from "./components/ProtectedRoutes";
 import { AuthProvider } from "./context/authContext";
 import "./App.css";
 import { Layout } from "./components/Layout";
+import { GeneralForm } from "./components/GeneralForm";
+import { EditForm } from "./components/EditForm";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/new" element={<GeneralForm />} />
+          <Route path="/edit/:id" element={<EditForm />} />
         </Routes>
       </AuthProvider>
     </div>

@@ -1,3 +1,23 @@
+.create-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.create-title {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgb(251 146 60);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.create-title:hover {
+  background-color: rgb(234 88 12);
+  cursor: pointer;
+}
+
 .section {
   width: 80%;
   margin: 20px auto;

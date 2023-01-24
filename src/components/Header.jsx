@@ -2,7 +2,7 @@ import { useAuth } from "../context/authContext";
 import "../style/Header.css";
 
 export function Header() {
-  const { user, logout, loading } = useAuth();
+  const { user, logout } = useAuth();
 
   const handleLogout = async () => {
     try {
@@ -12,7 +12,6 @@ export function Header() {
     }
   };
 
-  if (loading) return <h1>Loading</h1>;
   return (
     <header className="header-container">
       <div>

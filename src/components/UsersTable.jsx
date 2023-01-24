@@ -1,4 +1,5 @@
 import { deleteDoc, doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { db } from "../firebase";
 
 import "../style/Table.css";
@@ -6,6 +7,7 @@ import "../style/Table.css";
 export const UsersTable = ({ user }) => {
   const deleteUser = async (id) => {
     await deleteDoc(doc(db, "users", id));
+    window.location.reload(false);
   };
   return (
     <>
@@ -14,8 +16,14 @@ export const UsersTable = ({ user }) => {
         <span>{user.email}</span>
         <span>{user.age}</span>
         <span>
-          <button className="update">✒️</button>
-          <button className="delete" onClick={() => deleteUser(user.id)}>
+          <Link to={`/edit/${user.id}`} className="update">
+            ✒️
+          </Link>
+          <button
+            type="submit"
+            className="delete"
+            onClick={() => deleteUser(user.id)}
+          >
             🗑️
           </button>
         </span>

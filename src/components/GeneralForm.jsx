@@ -2,8 +2,10 @@ import { Formik, Field, Form } from "formik";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import "../style/GeneralForm.css";
+import { useNavigate } from "react-router-dom";
 
 export const GeneralForm = () => {
+  const navigate = useNavigate();
   return (
     <Formik
       initialValues={{
@@ -15,6 +17,7 @@ export const GeneralForm = () => {
         try {
           const docRef = await addDoc(collection(db, "users"), values);
           resetForm({ values: "" });
+          navigate("/");
           console.log("Document written with ID: ", docRef.id);
         } catch (error) {
           console.error("Error adding document: ", error);
